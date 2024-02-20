@@ -1,0 +1,54 @@
+.heading h1{
+    /* text-align: center; */
+    color: var(--main-color);
+    padding-top: 2.5rem;
+}
+.heading{
+    text-align: center;
+    font-size: 1rem;
+}
+.btn{
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: var(--main-color);
+    border-radius: 4rem;
+    box-shadow: 0 0 1rem var(--main-color);
+    font-size: 1rem;
+    color: var(--second-bg-color);
+    font-weight: 500;
+    transition: .5s ease;
+}
+
+.btn:hover{
+    box-shadow:none ;
+}
+
+.input{
+    width:40%;
+    padding-top: 2rem 2rem;
+    height: 3rem;
+    border-radius: 1rem;
+    padding: 1rem 1rem;
+    font-size: 1.2rem
+}
+.content{
+    padding-top: 8rem;
+    padding-left: 2rem;
+    display: flex;
+    /* align-content: center; */
+    justify-content: center;
+    gap: 1rem;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    padding-top: 1.3rem; 
+}
+
+.image-container img {
+    max-width: 100%;
+    max-height: 100%;
+}
