@@ -10,7 +10,7 @@ const Main = () => {
             </article>
 
             <section className="work" id="work">
-                <h2 className="heading"> My <span>Models</span></h2>
+                <h2 className="heading1"> My <span>Models</span></h2>
                 <div className="Work_container">
                     <div className="work-box">
                       
@@ -22,9 +22,9 @@ const Main = () => {
 
                     <div className="work-box">
                        
-                        <h3> T.T.V Model </h3>
-                        <p>"Deep learning models that generate videos from text descriptions."</p>
-                        <Link to='/TTV' className="btn">Read More
+                        <h3> T.T.M Model </h3>
+                        <p>"Deep learning models that generate Music from text descriptions."</p>
+                        <Link to='/TTM' className="btn">Read More
                         </Link>
                         {/* <a href="#" className="btn">Read More</a> */}
                     </div>

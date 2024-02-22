@@ -5,9 +5,10 @@ import './App.css'
 import { BrowserRouter, Routes,  Route,Link } from 'react-router-dom';
 import Main from './components/MainPage';
 import TTI from './components/TTI';
-import TTV from './components/TTV';
 import TTS from './components/TTS';
 import './components/Main.css'
+import TTM from './components/TTM';
+import './components/TTI.css'
 
 function App() {
 
@@ -18,7 +19,7 @@ function App() {
           <Route path='/' element={<Main />}>    
           </Route>
           <Route path='/TTI' element={<TTI />}></Route>
-          <Route path='/TTV' element={<TTV />}></Route>
+          <Route path='/TTM' element={<TTM/>}></Route>
           <Route path='/TTS' element={<TTS></TTS>}></Route>
         </Routes>
         </BrowserRouter>
