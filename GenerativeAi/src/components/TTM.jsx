@@ -8,6 +8,7 @@ const TTM = () => {
   const [audioSrc, setAudioSrc] = useState(null);
   const [inputText, setInputText] = useState("");
   const [loading, setLoading] = useState(false); // Add loading state
+  const [buttonDisabled, setButtonDisabled] = useState(false); // Add button disabled state
 
   const handleChange = (e) => {
     setInputText(e.target.value);
@@ -15,6 +16,7 @@ const TTM = () => {
 
   const handleClick = async () => {
     setLoading(true); // Set loading to true before making the API call
+    setButtonDisabled(true); // Disable the button
     try {
       const response = await axios.post("https://musicgenerate.onrender.com/generate_audio/", {
         inputs: inputText
@@ -27,6 +29,7 @@ const TTM = () => {
       console.error("Error fetching audio:", error);
     } finally {
       setLoading(false); // Set loading to false once response is received
+      setButtonDisabled(false); // Enable the button
     }
   };
 
@@ -65,7 +68,7 @@ const TTM = () => {
 
         <div className="content">
           <input className="input" type="text" placeholder="Enter input" value={inputText} onChange={handleChange} />
-          <button className="btn" onClick={handleClick}>
+          <button className="btn" onClick={handleClick} disabled={buttonDisabled}>
             Play Music
           </button>
         </div>
@@ -81,3 +84,4 @@ const TTM = () => {
 };
 
 export default TTM;
+

@@ -9,6 +9,7 @@ const TTS = () => {
     const [inputText, setInputText] = useState("");
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
+    const [buttonDisabled, setButtonDisabled] = useState(false); // Add button disabled state
 
     const handleChange = (e) => {
         setInputText(e.target.value);
@@ -17,6 +18,7 @@ const TTS = () => {
     const handleClick = async () => {
         try {
             setLoading(true); // Set loading state to true before making the request
+            setButtonDisabled(true); // Disable the button
             const response = await axios.post("https://fastapi-example-i1ta.onrender.com/generate_audioclip", {
                 text: inputText
             });
@@ -32,6 +34,7 @@ const TTS = () => {
             console.error("Error fetching audio:", error);
         } finally {
             setLoading(false); // Set loading state to false after the request is completed
+            setButtonDisabled(false); // Enable the button
         }
     };
 
@@ -62,7 +65,7 @@ const TTS = () => {
                         value={inputText}
                         onChange={handleChange}
                     />
-                    <button className="btn" onClick={handleClick}>
+                    <button className="btn" onClick={handleClick} disabled={buttonDisabled}>
                         Speak Out
                     </button>
                 </div>
@@ -75,3 +78,4 @@ const TTS = () => {
 };
 
 export default TTS;
+
